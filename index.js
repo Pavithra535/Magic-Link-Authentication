@@ -5,17 +5,17 @@ const transport=nodemailer.createTransport({
     service:'gmail',
     auth:{
         type:'OAuth2',
-        user:'pavithramk535@gmail.com',
-        accessToken:"ya29.a0Ad52N38pt07QAzilKmlBLD8kjW-E6fCbFBlXBJV1Kpf5z_j3hz5sqjun2LKr237LH4U3WMclJD39ni3or-KJsfHM6v_sayP45-FiuurxlCWHmpm-ZEy_da8HcU6_odvq2LNKqyDIqg08Lm-TCahPUhCxvOnfxacHHN7GaCgYKAecSARASFQHGX2MikcYeMbf19MauZAu0BHSXnQ0171",
+        user: // user e-mail,
+        accessToken: // provide the acccess token,
     },
     });
 const users=[
     {
-        id:1,email:'chravija@gmail.com',magicCode:null
+        id:1,email: //mail to which magic link has to be sent,magicCode:null
 
     },
     {
-        id:2,email:'nandikamaheshwar6@gmail.com',magicCode:null
+        id:2,email:// mail to which magic link has to be sent,magicCode:null
 
     }
 
@@ -46,7 +46,7 @@ app.post('/login',async(req,res)=> {
        const magicCode = uuid.v4().substr(0,8)
        user.magicCode = magicCode
        const mailOptions = {
-        from:'pavithramk535@gmail.com',
+        from:// user mail,
         to:email,
         subject:'Magic Link Login Auth',
         html:`
